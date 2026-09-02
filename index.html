@@ -8,7 +8,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#071a2d;--navy2:#0b2239;--navy3:#102b46;--black:#02070d;--orange:#f26522;--orange2:#ff9a5d;--white:#fff;--muted:#aebdca;--line:rgba(255,255,255,.13);--green:#54d18b;--red:#ef6666;--cyan:#74d8e6;--shadow:0 20px 45px rgba(0,0,0,.23)}
+:root{
+  --navy:#0C2340;
+  --navy2:#0A1D34;
+  --navy3:#102B46;
+  --black:#02070D;
+
+  /* AUBURN ORANGE */
+  --orange:#F26522;
+  --orange2:#F26522;
+
+  --white:#FFFFFF;
+  --muted:#AEBdCA;
+  --line:rgba(255,255,255,.13);
+  --green:#54D18B;
+  --red:#EF6666;
+  --cyan:#74D8E6;
+  --shadow:0 20px 45px rgba(0,0,0,.23);
+}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 8% 0%,rgba(242,101,34,.08),transparent 25rem),radial-gradient(circle at 100% 5%,rgba(41,103,163,.14),transparent 30rem),var(--black);color:#fff}body{font-family:Barlow,Arial,sans-serif;text-transform:uppercase}button{font:inherit}img{max-width:100%}.shell{width:min(1600px,100%);margin:auto}
 .topbar{position:sticky;top:0;z-index:500;background:rgba(2,7,13,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.brand-row{min-height:76px;padding:10px clamp(12px,2vw,28px);display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:12px;min-width:0}.au-logo{width:58px;height:58px;object-fit:contain;flex:0 0 auto}.brand-kicker{color:var(--orange2);font-size:12px;font-weight:900;letter-spacing:2px}.brand-title{font-family:"Barlow Condensed",sans-serif;font-size:clamp(28px,3vw,44px);font-weight:900;line-height:.86;white-space:nowrap}.brand-sub{margin-top:5px;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:1.4px}.header-card{display:flex;align-items:center;gap:11px;padding:7px 12px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,rgba(242,101,34,.08),rgba(255,255,255,.03))}.header-card img{width:39px;height:39px;object-fit:contain}.header-small{color:var(--orange2);font-size:10px;font-weight:900;letter-spacing:1px}.header-big{font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:900}.nav{padding:0 clamp(12px,2vw,28px);display:flex;gap:6px;overflow-x:auto;border-top:1px solid rgba(255,255,255,.05);background:#07131f}.nav button{flex:0 0 auto;padding:13px 18px 11px;border:0;border-bottom:4px solid transparent;background:transparent;color:var(--muted);cursor:pointer;font-family:"Barlow Condensed",sans-serif;font-size:18px;font-weight:900}.nav button.active{color:#fff;border-bottom-color:var(--orange)}
 .ticker{height:48px;display:flex;align-items:stretch;overflow:hidden;background:#040b12;border-bottom:1px solid var(--line)}.ticker-label{flex:0 0 auto;min-width:142px;padding:0 15px;display:flex;align-items:center;gap:8px;background:linear-gradient(115deg,var(--navy3),#0a1724);border-right:4px solid var(--orange);color:var(--cyan);font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:900}.ticker-viewport{min-width:0;flex:1;overflow:hidden}.ticker-track{height:100%;display:flex;width:max-content;align-items:center;animation:ticker 190s linear infinite}.ticker-group{display:flex;align-items:center;flex:none}.ticker-game{padding:0 24px;display:flex;align-items:center;gap:7px;white-space:nowrap;border-right:1px solid var(--line);font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:800}.ticker-game img{width:25px;height:25px;object-fit:contain}.rank{color:var(--orange)}@keyframes ticker{to{transform:translateX(-50%)}}
@@ -38,7 +55,18 @@
 .drive-meta{margin-top:7px;color:var(--muted);font-size:13px;font-weight:700}
 .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .player-table{min-width:720px}
-.live-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border:1px solid rgba(242,101,34,.4);border-radius:999px;background:rgba(242,101,34,.12);color:var(--orange2);font-size:11px;font-weight:900}
+.live-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:6px 10px;
+  border:1px solid var(--orange);
+  border-radius:999px;
+  background:rgba(242,101,34,.14);
+  color:var(--orange);
+  font-size:11px;
+  font-weight:900;
+}
 
 /* BIG WAR EAGLE SCORE TAKEOVER */
 .takeover{overflow:hidden}
@@ -57,6 +85,39 @@
 
 @media(max-width:1000px){.stats-grid{grid-template-columns:repeat(2,1fr)}.advanced-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.stats-grid,.advanced-grid,.drive-grid{grid-template-columns:1fr}.metric-card{min-height:100px}.player-table th,.player-table td{white-space:nowrap}.player-table th:nth-child(n+5),.player-table td:nth-child(n+5){display:table-cell}}
+/* COMPACT LIVE-STATS PREGAME STATE */
+
+#page-stats .section:has(.empty){
+  padding-top:14px;
+  padding-bottom:14px;
+}
+
+#page-stats .section:has(.empty) .section-heading{
+  margin-bottom:4px;
+}
+
+#page-stats .section:has(.empty) .empty{
+  padding:14px 10px 10px;
+  min-height:0;
+}
+
+#page-stats .section:has(.table-wrap > .empty){
+  min-height:0;
+}
+
+#page-stats .section:has(.table-wrap > .empty) .table-wrap{
+  min-height:0;
+}
+
+#page-stats .section:has(.table-wrap > .empty) .section-title{
+  font-size:clamp(28px,2.5vw,38px);
+}
+
+/* KEEP FULL SIZE ONCE ACTUAL STATS ARRIVE */
+
+#page-stats .player-table{
+  margin-top:10px;
+}
 </style>
 </head>
 <body>
@@ -193,7 +254,17 @@ renderAdvanced();
 renderDrives();
 const plays=gameCenter?.recentPlays||[];
 $('recentPlays').innerHTML=plays.length?plays.map(p=>`<div style="padding:12px 4px;border-bottom:1px solid var(--line)"><strong style="color:var(--orange2)">${p.period?`Q${p.period}`:''} ${p.clock||''}</strong><span style="margin-left:8px">${p.playText}</span><div style="margin-top:5px;color:var(--muted);font-size:12px">${p.down?`${p.down}${ordinal(p.down)} & ${p.distance}`:''}${p.yardsGained!==null&&p.yardsGained!==undefined?` • ${p.yardsGained} YDS`:''}</div></div>`).join(''):'<div class="empty">RECENT PLAYS WILL APPEAR DURING THE GAME.</div>';
-text('statsStatus',gameIsLive(scoreboard?.game)?'LIVE • AUTO REFRESH 15 SEC':'PREGAME');
+const liveNow = gameIsLive(scoreboard?.game);
+
+text(
+  'statsStatus',
+  liveNow ? 'LIVE • AUTO REFRESH 15 SEC' : 'PREGAME'
+);
+
+document.querySelectorAll('#page-stats .live-badge').forEach(badge => {
+  badge.textContent = liveNow ? 'LIVE • TODAY' : 'GAME DAY STATS';
+});
+
 }
 function renderStandings(){if(!standings.length){$('standingsContainer').innerHTML='<div class="empty">SEC STANDINGS UNAVAILABLE.</div>';return}$('standingsContainer').innerHTML=`<table class="standings-table"><thead><tr><th>#</th><th>TEAM</th><th>SEC</th><th>OVERALL</th><th>PF</th><th>PA</th></tr></thead><tbody>${standings.map((team,index)=>`<tr class="${isAuburn(team.team)?'auburn-row':''}"><td>${index+1}</td><td><div class="standing-team"><img src="${logo(team.teamId)}"><span>${team.team}</span></div></td><td>${team.conference}</td><td>${team.overall}</td><td>${team.pointsFor??'--'}</td><td>${team.pointsAgainst??'--'}</td></tr>`).join('')}</tbody></table>`}
 function renderSchedule(){const games=pregame?.schedule||[];if(!games.length){$('scheduleGrid').innerHTML='<div class="empty">SCHEDULE UNAVAILABLE.</div>';return}$('scheduleGrid').innerHTML=games.map(game=>{const resultClass=game.result==='W'?'win':game.result==='L'?'loss':'';return`<div class="schedule-card ${game.current?'current':''}"><div class="schedule-top"><span>WEEK ${game.week}</span><span class="site-tag">${game.site}</span></div><div class="schedule-opponent"><img src="${logo(game.opponentId)}"><div><div class="schedule-name">${game.opponent}</div><div class="schedule-record">${game.opponentRecord||'0-0'} • ${game.opponentConference||''}</div></div></div><div class="schedule-info">${game.completed?game.venue||'':`${formatKickoff(game.startDate)}${game.tv?` • ${game.tv}`:''}`}</div>${game.completed?`<div class="schedule-result ${resultClass}">${game.result} ${game.auburnPoints}-${game.opponentPoints}</div>`:''}</div>`}).join('')}
